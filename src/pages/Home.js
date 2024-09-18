@@ -1,10 +1,19 @@
 import React from "react";
+import Projects from "../components/Projects"; // Import the Projects component
+import Services from "../components/Services";
+import Contact from "../components/Contact";
 
 function Home() {
   return (
     <div>
-      <h1>Welcome to My Portfolio</h1>
-      <p>This is the Home page.</p>
+      {/* Hero section */}
+
+      {/* Projects section */}
+      <Projects />
+      {/* Services section */}
+      <Services />
+      {/* Contact section */}
+      <Contact />
     </div>
   );
 }
