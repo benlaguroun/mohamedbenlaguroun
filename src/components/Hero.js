@@ -1,0 +1,16 @@
+import React from "react";
+import "./Hero.css";
+
+function Hero() {
+  return (
+    <section className="hero">
+      <div className="hero-content">
+        <h1>Hello, I'm Mohamed Ben</h1>
+        <p>A Full-Stack Developer specializing in Front-End Development.</p>
+        <button className="cta-btn">View My Work</button>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
