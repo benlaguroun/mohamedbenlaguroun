@@ -2,6 +2,7 @@ import React from "react";
 import Projects from "../components/Projects"; // Import the Projects component
 import Services from "../components/Services";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -14,6 +15,8 @@ function Home() {
       <Services />
       {/* Contact section */}
       <Contact />
+      {/* Footer section */}
+      <Footer />
     </div>
   );
 }
