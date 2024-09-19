@@ -1,20 +1,21 @@
 import React from "react";
-import Projects from "../components/Projects"; // Import the Projects component
-import Services from "../components/Services";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import ProjectsGrid from "../components/ProjectsGrid"; // Import the ProjectsGrid component
+import Services from "../components/Services"; // Import the Services component
+import Contact from "../components/Contact"; // Import the Contact component
+import Footer from "../components/Footer"; // Import the Footer component
 
 function Home() {
   return (
     <div>
-      {/* Hero section */}
+      {/* ProjectsGrid section */}
+      <ProjectsGrid />
 
-      {/* Projects section */}
-      <Projects />
       {/* Services section */}
       <Services />
+
       {/* Contact section */}
       <Contact />
+
       {/* Footer section */}
       <Footer />
     </div>

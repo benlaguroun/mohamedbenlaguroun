@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Header from "./components/Header";
 import Hero from "./components/Hero"; // Import the Hero component
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
