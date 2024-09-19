@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./Header.css"; // Import the CSS for styling
+import "./Header.css";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,17 +15,20 @@ function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <div className="logo">Mohamed Ben</div>
-        <nav>
+        <nav className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
           <ul>
             <li>
               <a href="#home">Home</a>
@@ -40,6 +44,11 @@ function Header() {
             </li>
           </ul>
         </nav>
+        <div className="hamburger" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
       </div>
     </header>
   );

@@ -1,61 +1,101 @@
+/* Basic Header Styles */
 .header {
-  position: absolute; /* Ensures the header is on top of the content */
-  width: 100%;
+  position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0); /* Semi-transparent by default */
-  color: #e8e2e2;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  width: 100%;
   padding: 1rem 2rem;
-  z-index: 1000; /* Higher z-index ensures it's on top */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  color: white;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  z-index: 1000;
 }
 
 .header.scrolled {
   position: fixed;
-  background-color: #fff; /* Solid background when scrolled */
+  background-color: rgba(255, 255, 255, 0.9);
   color: #333;
-  z-index: 1000; /* Keep the z-index when scrolled */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.header .container {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header .logo {
+/* Logo */
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.header nav ul {
+/* Navigation Menu */
+.nav-menu ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+  gap: 2rem;
 }
 
-.header nav a {
+.nav-menu ul li {
+  display: inline;
+}
+
+.nav-menu a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s;
+  font-size: 1rem;
 }
 
-.header nav a:hover {
-  color: #007bff; /* Change color on hover */
+.nav-menu a:hover {
+  color: #007bff;
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #fff; /* Change to dark color on white background */
+  border-radius: 5px;
+}
+
+/* Responsive Styles for Mobile */
 @media (max-width: 768px) {
-  .header .container {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
     flex-direction: column;
-    align-items: flex-start;
+    padding: 1rem 0;
   }
 
-  .header nav ul {
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu ul {
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger .bar {
+    background-color: #333;
   }
 }
